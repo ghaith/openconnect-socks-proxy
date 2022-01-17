@@ -24,10 +24,11 @@ RUN set -xe \
 # service image
 FROM alpine:edge
 RUN set -xe \
-    && apk add --no-cache \
-               --repository http://dl-cdn.alpinelinux.org/alpine/edge/testing/ \
-               libevent \
-               openconnect
+    && apk add libevent openconnect
+    #&& apk add --no-cache \
+    #           --repository http://dl-cdn.alpinelinux.org/alpine/edge/testing/ \
+    #           libevent \
+    #           openconnect
 COPY --from=ocproxy-builder /usr/local/src/ocproxy-1.60/ocproxy /usr/local/bin/ocproxy
 COPY openconnect.conf /etc/openconnect.conf
 EXPOSE 1080
