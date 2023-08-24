@@ -24,7 +24,7 @@ RUN set -xe \
 # service image
 FROM alpine:edge
 RUN set -xe \
-    && apk add libevent openconnect
+    && apk add libevent openconnect openssl
     #&& apk add --no-cache \
     #           --repository http://dl-cdn.alpinelinux.org/alpine/edge/testing/ \
     #           libevent \
